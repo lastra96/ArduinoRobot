@@ -11,10 +11,10 @@ LiquidCrystal_I2C lcd(0x3F,16,2);
 const int ledPIN = 9;
 
 //motores
-const int motord1 = 12
-const int motorv1 = 10
-const int motord2 = 13
-const int motorv2 = 11
+const int motord1 = 12;
+const int motorv1 = 10;
+const int motord2 = 13;
+const int motorv2 = 11;
 
 //interrupciones
 const int intPin = 2;
@@ -100,7 +100,7 @@ case 1:
 break;
 case 2;
 	mensaje("Ejecutando..","");
-	for(int i=0; i< com.length(); i++)´{
+	for(int i=0; i< com.length(); i++){
 		if(cercaObjeto()==FALSE){
 			if(ejecuta(com[i])==FALSE){
 				errormode=2;
@@ -224,22 +224,22 @@ boolean recibeComandos(){
       case KEY_UP:
          com[i]=1;
          i++;
-         break;
+      break;
       case KEY_LEFT:
          com[i]=2;
          i++;
-         break;
+      break;
       case KEY_RIGHT:
          com[i]=3;
          i++;
-         break;
+      break;
       case KEY_DOWN:
          com[i]=4;
          i++;
-         break;
+      break;
       case KEY_OK:
          flag=1;
-         break;
+      break;
       default:
         return false;
         break;
@@ -257,10 +257,10 @@ case 2:
 	digitalWrite(motord1, HIGH);
 	digitalWrite(motord2, LOW);
 	digitalWrite(motorv1, 50);
-digitalWrite(motorv2, 50);
-delay(1000);
-digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 0);
+	digitalWrite(motorv2, 50);
+	delay(1000);
+	digitalWrite(motorv1, 0);
+	digitalWrite(motorv2, 0);
 
 break;
 case 4:
@@ -268,10 +268,10 @@ case 4:
 	digitalWrite(motord1, HIGH);
 	digitalWrite(motord2, LOW);
 	digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 50);
-delay(1000);
-digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 0);
+	digitalWrite(motorv2, 50);
+	delay(1000);
+	digitalWrite(motorv1, 0);
+	digitalWrite(motorv2, 0);
 
 break;
 case 6:
@@ -279,10 +279,10 @@ case 6:
 	digitalWrite(motord1, HIGH);
 	digitalWrite(motord2, LOW);
 	digitalWrite(motorv1, 50);
-digitalWrite(motorv2, 0);
-delay(1000);
-digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 0);
+	digitalWrite(motorv2, 0);
+	delay(1000);
+	digitalWrite(motorv1, 0);
+	digitalWrite(motorv2, 0);
 
 break;
 case 8:
@@ -290,10 +290,10 @@ case 8:
 	digitalWrite(motord1, LOW);
 	digitalWrite(motord2, HIGH);
 	digitalWrite(motorv1, 50);
-digitalWrite(motorv2, 50);
-delay(1000);
-digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 0);
+	digitalWrite(motorv2, 50);
+	delay(1000);
+	digitalWrite(motorv1, 0);
+	digitalWrite(motorv2, 0);
 
 break;
 case 0:
@@ -301,10 +301,10 @@ case 0:
 	digitalWrite(motord1, LOW);
 	digitalWrite(motord2, LOW);
 	digitalWrite(motorv1, 50);
-digitalWrite(motorv2, 50);
-delay(1000);
-digitalWrite(motorv1, 0);
-digitalWrite(motorv2, 0);
+	digitalWrite(motorv2, 50);
+	delay(1000);
+	digitalWrite(motorv1, 0);
+	digitalWrite(motorv2, 0);
 
 break;
 default:
