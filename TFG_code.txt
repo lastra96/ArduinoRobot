@@ -31,13 +31,11 @@ const int RECV_PIN = 9;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
-int com[30];
-int inic = 1;
-int i=0;
-int mode = 1;
-int errormode = 0;
-String errortext = "Unknown error";
-int obstaculos = 0;
+int com[30]; //array para guardar los movimientos
+int mode = 1; // entero para indicar el modo en el que se encuentra el vehículo
+int errormode = 0; // entero para indicar el modo en el que salto el error
+String errortext = "Unknown error"; // motivo del error a mostrar cuando entre en el modo 4 o modo error
+int obstaculos = 0; //contador de obstaculos para mostrar una vez terminado el circuito
 
 
 
@@ -85,7 +83,7 @@ void loop() {
 	switch(mode){
 		case 1:
 			mensaje("Introduce comandos","");
-			if(recibeComandos()==TRUE){
+			if(recibeComandos()==true){
 				mensaje("Recepción correcta", "Comenzando");
 				delay(3000);
 				mensaje("","");
@@ -98,14 +96,14 @@ void loop() {
 			}
 				
 		break;
-		case 2;
+		case 2:
 			mensaje("Ejecutando..","");
-			for(int i=0; i< com.length(); i++){
-				if(cercaObjeto()==FALSE){
-					if(ejecuta(com[i])==FALSE){
+			for(int j=0; j< com.length(); j++){
+				if(cercaObjeto()==false){
+					if(ejecuta(com[j])==false){
 						errormode=2;
 						errortext="Error en ejecución";
-						i=com.length();
+						j=com.length();
 						mode=5;
 					}
 				}else{
@@ -158,12 +156,12 @@ void loop() {
 boolean retomar(){
 	if (irrecv.decode(&results)){
 		if(results.value==KEY_OK){
-			return TRUE;
+			return true;
 		}else if(results.value!=NULL){
 			mensaje("Vuelva a intentarlo","");
 		}
 	}
-	return FALSE;
+	return false;
 }
 
 void obstaculo(){
@@ -216,6 +214,7 @@ void enciendeLed(long ms){
 
 boolean recibeComandos(){
 	int flag=0;
+	int i=0;
 	while(flag==0)
 	{
 		if (irrecv.decode(&results))
@@ -309,8 +308,8 @@ boolean ejecuta (int x){
 
 		break;
 		default:
-		//error
-		return false;
+			//error
+			return false;
 	}
 	return true;
 }
