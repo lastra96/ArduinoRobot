@@ -152,7 +152,7 @@ void loop() {
 
 boolean retomar(){
   if (irrecv.decode(&results)){
-    if(results.value==KEY_OK){
+    if(results.value==0xFF02FD){
       return true;
     }else if(results.value!=NULL){
       mensaje("Retry","");
