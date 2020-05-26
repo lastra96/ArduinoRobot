@@ -261,7 +261,7 @@ boolean recibeComandos(){
 
 boolean ejecuta (int x){
 
-	if(x==2){
+	if(x==1){
       //alante
       digitalWrite(motord1, HIGH);
       digitalWrite(motord2, LOW);
@@ -270,7 +270,7 @@ boolean ejecuta (int x){
       delay(1000);
       digitalWrite(motorv1, 0);
       digitalWrite(motorv2, 0);
-	}else if(x==4){
+	}else if(x==2){
       //izda
       digitalWrite(motord1, HIGH);
       digitalWrite(motord2, LOW);
@@ -280,7 +280,7 @@ boolean ejecuta (int x){
       digitalWrite(motorv1, 0);
       digitalWrite(motorv2, 0);
 
-    }else if(x==6){
+    }else if(x==3){
       //dcha
       digitalWrite(motord1, HIGH);
       digitalWrite(motord2, LOW);
@@ -290,7 +290,7 @@ boolean ejecuta (int x){
       digitalWrite(motorv1, 0);
       digitalWrite(motorv2, 0);
 
-    }else if(x==8){
+    }else if(x==4){
       //atras
       digitalWrite(motord1, LOW);
       digitalWrite(motord2, HIGH);
