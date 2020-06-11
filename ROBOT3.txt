@@ -111,7 +111,7 @@ void loop() {
       }
 	  if(errormode==2){
 		mode=4;
-	  }else{
+	  }else if(j==comlength){
 		mode=3;
 	  }
         
